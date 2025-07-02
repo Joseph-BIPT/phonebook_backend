@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
 mongoose.set('strictQuery', false);
-const url = `mongodb+srv://Joseph:rcQjnq14hnK5Xtq8@cluster0.wa7m3yk.mongodb.net/phonebookApp?retryWrites=true&w=majority&appName=Cluster0`;
+const url = process.env.MONGODB_URI;
+
 mongoose.connect(url)
 .then(result => {
     console.log('Connected to MongoDB');

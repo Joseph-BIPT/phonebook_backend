@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 
 const Person = require('./models/person');
@@ -128,7 +130,7 @@ app.get('/info', (req, res, next) => {
 app.use(unknownEndpoint);
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
     console.log(`Server listens at port: ${PORT}`);
 })
